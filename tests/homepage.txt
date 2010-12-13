@@ -1,0 +1,5 @@
+# test for the university of bath homepage
+--- 
+type: website
+name: Homepage
+url: http://www.bath.ac.uk

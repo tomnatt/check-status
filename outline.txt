@@ -1,0 +1,37 @@
+GENERATE
+
+move results to storage directory
+
+get all config files
+foreach { |config file|
+
+if (mysql) {
+    doMysqlTest(config file)
+} else if (oracle) {
+    doOracletest(config)
+} else if (website) {
+    doWebsiteTest(config)
+} else {
+    doSpecificTest(config);
+}
+
+delete storage/*
+
+}
+
+OUTPUT
+get all result files
+
+add each to a json file (up / down)
+add each to an RSS file
+
+save file
+
+WEBPAGE
+read json file
+put on screen
+
+
+
+NOTES
+

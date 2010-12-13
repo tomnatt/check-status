@@ -1,0 +1,5 @@
+# test for the wiki dashboard
+--- 
+type: website
+name: Wiki Dashboard
+url: http://wiki.bath.ac.uk
