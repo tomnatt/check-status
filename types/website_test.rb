@@ -9,8 +9,6 @@ def doWebsiteTest(name, address)
     http = Net::HTTP.new(url.host, url.port)
     res = http.request(Net::HTTP::Get.new(url.request_uri))
     
-    puts res.code
-    
     result = "failed"
     if (res.code.to_i < 400) then 
         result = "passed"

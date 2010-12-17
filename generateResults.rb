@@ -4,11 +4,13 @@ require 'rubygems'
 require 'rss/maker'
 require 'yaml'
 
-require 'types/mysql_test.rb'
-require 'types/website_test.rb'
-
 # config
-test_location = "tests/"
+script_location = "/home/ruby/apps/server_status/"
+test_location = script_location + "tests/"
+output_destination = script_location + "output/service_status.rss" # local file to write
+
+require script_location + 'types/mysql_test.rb'
+require script_location + 'types/website_test.rb'
 
 results = Array.new
 
@@ -46,7 +48,6 @@ Dir.new(test_location).entries.each { |file|
 
 # create the output RSS feed 
 version = "2.0" # ["0.9", "1.0", "2.0"]
-destination = "output/service_status.rss" # local file to write
 
 content = RSS::Maker.make(version) do |m|
     m.channel.title = "Web Services Services. On the Web."
@@ -65,7 +66,7 @@ content = RSS::Maker.make(version) do |m|
     
 end
 
-File.open(destination,"w") do |f|
+File.open(output_destination,"w") do |f|
     f.write(content)
 end
 
