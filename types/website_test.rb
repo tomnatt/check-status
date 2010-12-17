@@ -12,7 +12,7 @@ def doWebsiteTest(name, address)
     puts res.code
     
     result = "failed"
-    if (res.code.to_i == 200) then 
+    if (res.code.to_i < 400) then 
         result = "passed"
     end
     
