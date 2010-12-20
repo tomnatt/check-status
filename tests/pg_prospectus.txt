@@ -1,0 +1,5 @@
+# test for the pg prospectus
+--- 
+type: website
+name: PG Prospectus
+url: http://www.bath.ac.uk/study/pg/programmes/flui-powe-syst

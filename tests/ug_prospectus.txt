@@ -1,0 +1,6 @@
+# test for the undergrad prospectus
+--- 
+type: website
+name: UG Prospectus
+url: http://www.bath.ac.uk/study/ug/courses/HUG-D1/
+
