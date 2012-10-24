@@ -1,3 +1,3 @@
 #!/bin/ruby
 
-#puts "foobar";
+puts "mysql - not yet implemented";
