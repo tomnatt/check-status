@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0"
-  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
   <channel>
     <title>Web Services Services. On the Web.</title>
     <link>http://www.bath.ac.uk/</link>
@@ -9,13 +12,15 @@
       <title>Homepage</title>
       <link>http://www.bath.ac.uk</link>
       <description>passed</description>
-      <pubDate>Fri, 17 Dec 2010 08:31:11 +0000</pubDate>
+      <pubDate>Wed, 24 Oct 2012 12:25:30 +0100</pubDate>
+      <dc:date>2012-10-24T12:25:30.923101+01:00</dc:date>
     </item>
     <item>
       <title>Wiki Dashboard</title>
       <link>http://wiki.bath.ac.uk</link>
       <description>passed</description>
-      <pubDate>Fri, 17 Dec 2010 08:31:11 +0000</pubDate>
+      <pubDate>Wed, 24 Oct 2012 12:25:30 +0100</pubDate>
+      <dc:date>2012-10-24T12:25:30.921303+01:00</dc:date>
     </item>
   </channel>
 </rss>
