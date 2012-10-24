@@ -5,7 +5,9 @@ require 'rss/maker'
 require 'yaml'
 
 # config
-script_location = "/home/ruby/apps/server_status/"
+#script_location = "/home/ruby/apps/server_status/"
+script_location = "/home/ma1twn/ruby/status/"
+
 test_location = script_location + "tests/"
 output_destination = script_location + "output/service_status.rss" # local file to write
 
