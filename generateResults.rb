@@ -13,7 +13,7 @@ output_file = script_location + "/output/service_status.rss" # local file to wri
 # load all test types
 Dir.new(script_location + "/types/").entries.each { |file|
     if file =~ /.+\.rb$/ then
-        require "#{script_location + "/types"}/#{file}"
+        require "#{script_location}/types/#{file}"
     end
 }
 
@@ -42,11 +42,14 @@ Dir.new(test_location).entries.each { |file|
         test = YAML::load(data)
         
         if (test["type"] == "website") then 
-            results << doWebsiteTest(test["name"], test["url"]);
+            w = WebsiteTest.new(test["name"], test["url"])
+            results << w.run_test
         elsif (test["type"] == "mysql") then
-            puts "mysql"
+            m = MysqlTest.new
+            puts m.run_test
         elsif (test["type"] == "oracle") then
-            puts "oracle"
+            o = OracleTest.new
+            puts o.run_test
         elsif (test["type"] == "tomcat") then
             puts "tomcat"
         else
