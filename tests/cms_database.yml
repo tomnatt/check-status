@@ -1,0 +1,5 @@
+# test for the cms database
+--- 
+type: oracle
+name: CMS Database
+url: http://www.bath.ac.uk

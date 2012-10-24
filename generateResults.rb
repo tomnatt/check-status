@@ -20,7 +20,7 @@ results = Array.new
 Dir.new(test_location).entries.each { |file|
     
     # only read files ending in .txt
-    if file =~ /.+\.txt$/ then 
+    if file =~ /.+\.yml$/ then 
     
         file = test_location + file
         
