@@ -46,14 +46,12 @@ Dir.new(test_location).entries.each { |file|
             results << w.run_test
         elsif (test["type"] == "mysql") then
             m = MysqlTest.new
-            puts m.run_test
+            results << m.run_test
         elsif (test["type"] == "oracle") then
             o = OracleTest.new
-            puts o.run_test
-        elsif (test["type"] == "tomcat") then
-            puts "tomcat"
+            results << o.run_test
         else
-            puts "other"
+            results << ["other", "http://www.example.com", false.to_s]
         end
     end
     # end the for each
