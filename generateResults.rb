@@ -5,14 +5,22 @@ require 'rss/maker'
 require 'yaml'
 
 # config
-#script_location = "/home/ruby/apps/server_status/"
-script_location = "/home/ma1twn/ruby/status/"
+script_location = File.expand_path(File.dirname(__FILE__))
 
-test_location = script_location + "tests/"
-output_destination = script_location + "output/service_status.rss" # local file to write
+test_location = script_location + "/tests/"
+output_file = script_location + "/output/service_status.rss" # local file to write
 
-require script_location + 'types/mysql_test.rb'
-require script_location + 'types/website_test.rb'
+# load all test types
+Dir.new(script_location + "/types/").entries.each { |file|
+    if file =~ /.+\.rb$/ then
+        require "#{script_location + "/types"}/#{file}"
+    end
+}
+
+# check for output directory
+if (!(File.exists?(File.dirname(output_file)) && File.directory?(File.dirname(output_file)))) then
+    abort("you need an output directory")
+end
 
 results = Array.new
 
@@ -68,7 +76,7 @@ content = RSS::Maker.make(version) do |m|
     
 end
 
-File.open(output_destination,"w") do |f|
+File.open(output_file,"w") do |f|
     f.write(content)
 end
 
