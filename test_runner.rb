@@ -8,7 +8,7 @@ class TestRunner
     def initialize(script_location)
         @script_location = script_location
         @test_location = @script_location + "/tests/" # location of test files
-        @output_file = @script_location + "/output/service_status.rss" # local file to write
+        @output_file = @script_location + "/public/output/service_status.rss" # local file to write
 
         # load all test types
         Dir.new(script_location + "/types/").entries.each { |file|

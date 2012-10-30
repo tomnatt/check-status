@@ -7,7 +7,7 @@ require 'sinatra'
 require 'rss/parser'
 
 # config
-set :public_folder, 'output'
+set :public_folder, 'public'
 script_location = File.expand_path(File.dirname(__FILE__))
 
 tests = TestRunner.new(script_location)
@@ -19,7 +19,7 @@ get '/run' do
 end
 
 get '/output' do
-    send_file File.join(settings.public_folder, 'service_status.rss')
+    send_file tests.output_file
 end
 
 get '/' do
