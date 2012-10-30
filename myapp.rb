@@ -4,9 +4,10 @@ require 'rubygems'
 require 'test_runner.rb'
 require 'sinatra'
 
-
 # config
+set :public_folder, 'output'
 script_location = File.expand_path(File.dirname(__FILE__))
+
 tests = TestRunner.new(script_location)
 
 get '/run' do
@@ -16,5 +17,5 @@ get '/run' do
 end
 
 get '/output' do
-    send_file File.join(settings.public_folder, 'index.html')
+    send_file File.join(settings.public_folder, 'service_status.rss')
 end
