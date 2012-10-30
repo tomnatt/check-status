@@ -22,5 +22,6 @@ get '/output' do
 end
 
 get '/' do
-    haml :index, :format => :html5
+    title = "thing"
+    haml :index, :format => :html5, :locals => {:title => title}
 end
