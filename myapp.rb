@@ -1,6 +1,7 @@
 #!/bin/ruby
 
 require 'rubygems'
+require 'haml'
 require 'test_runner.rb'
 require 'sinatra'
 
@@ -18,4 +19,8 @@ end
 
 get '/output' do
     send_file File.join(settings.public_folder, 'service_status.rss')
+end
+
+get '/' do
+    haml :index, :format => :html5
 end
