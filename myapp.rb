@@ -4,6 +4,7 @@ require 'rubygems'
 require 'haml'
 require 'test_runner.rb'
 require 'sinatra'
+require 'rss/parser'
 
 # config
 set :public_folder, 'output'
@@ -22,6 +23,16 @@ get '/output' do
 end
 
 get '/' do
-    title = "thing"
-    haml :index, :format => :html5, :locals => {:title => title}
+
+    # Read the feed into rss_content
+    rss_content = ""
+    open(tests.output_file, "r") do |f|
+       rss_content = f.read
+    end
+
+    # Parse the feed, dumping its contents to rss
+    rss = RSS::Parser.parse(rss_content, false)
+
+    title = "Results"
+    haml :index, :format => :html5, :locals => {:title => title, :rss => rss}
 end
