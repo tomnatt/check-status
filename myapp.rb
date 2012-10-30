@@ -15,7 +15,7 @@ tests = TestRunner.new(script_location)
 get '/run' do
     tests.run_tests
     tests.create_output
-    puts "done"
+    "done"
 end
 
 get '/output' do
