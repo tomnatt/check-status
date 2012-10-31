@@ -1,4 +1,12 @@
-%h1= "title"
-%h2= "subtitle"
-%div
-    %p{:class=>"content", :id=>"cont"}= "words in latin and #{rss.items.size}"
+%div.col_12
+    %h1= "Status"
+    %table.striped
+        %tbody
+            - rss.items.to_enum.with_index.each do |item, index|
+                %tr{:class => index.even? ? 'alt' : nil}
+                    %td= item.title
+                    %td
+                        - if item.description == 'true'
+                            %div{:class => 'notice success'}= "Alive"
+                        - else
+                            %div{:class => 'notice error'}= "Not so alive"

@@ -33,6 +33,6 @@ get '/' do
     # Parse the feed, dumping its contents to rss
     rss = RSS::Parser.parse(rss_content, false)
 
-    title = "Results"
+    title = "Is it up?"
     haml :index, :format => :html5, :locals => {:title => title, :rss => rss}
 end
