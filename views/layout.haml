@@ -1,6 +1,13 @@
 !!!
-%head
-    %title= title
-    %link{:href => "css/kickstart.css", :type => "text/css"}
-%body
-    =yield
+%html
+    %head
+        %title= title
+        %meta{:charset => 'UTF-8'}
+        %meta{:name => 'description', :content => 'text/html'}
+        %script{:type => 'text/javascript', :src => 'https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js'}
+        %link{:href => '/css/kickstart.css', :rel => 'stylesheet', :type => 'text/css'}
+    %body
+        %div{:id => 'wrap', :class => 'clearfix'}
+            =yield
+
+
