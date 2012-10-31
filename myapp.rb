@@ -7,7 +7,7 @@ require 'sinatra'
 require 'rss/parser'
 
 # config
-set :public_folder, 'public'
+#set :public_folder, 'public'
 script_location = File.expand_path(File.dirname(__FILE__))
 
 tests = TestRunner.new(script_location)
