@@ -5,11 +5,12 @@ require 'haml'
 require 'test_runner.rb'
 require 'sinatra'
 require 'rss/parser'
+require 'rufus/scheduler'
 
 # config
-#set :public_folder, 'public'
 script_location = File.expand_path(File.dirname(__FILE__))
 
+# set up web routes
 tests = TestRunner.new(script_location)
 
 get '/run' do
@@ -35,4 +36,16 @@ get '/' do
 
     title = "Is it up?"
     haml :index, :format => :html5, :locals => {:title => title, :rss => rss}
+end
+
+get '/test' do
+    puts "test2"
+end
+
+# set up scheduling - refactor to a different file?
+scheduler = Rufus::Scheduler.start_new
+
+scheduler.every '10m' do
+    tests.run_tests
+    tests.create_output
 end
