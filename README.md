@@ -3,7 +3,7 @@ check-status
 
 Check the status of a service
 
-Written in ruby 1.8.7 using Sinatra, HAML and HTML Kickstart
+Written in ruby using Sinatra, HAML and HTML Kickstart
 
 Usage
 -----
