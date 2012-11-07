@@ -35,7 +35,8 @@ get '/' do
     rss = RSS::Parser.parse(rss_content, false)
 
     title = "Is it up?"
-    haml :index, :format => :html5, :locals => {:title => title, :rss => rss}
+    date = "Last updated: " + Time.parse(rss.items[0].date.to_s).strftime("%H:%M:%S %d/%m/%Y")
+    haml :index, :format => :html5, :locals => {:title => title, :date => date, :rss => rss}
 end
 
 get '/test' do

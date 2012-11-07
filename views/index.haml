@@ -1,5 +1,6 @@
 %div.col_12
-    %h1= "Status"
+    %h1.col_9= "Status"
+    %h2.date= date
     %table.striped
         %tbody
             - rss.items.to_enum.with_index.each do |item, index|
