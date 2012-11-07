@@ -2,10 +2,11 @@
 
 require 'rubygems'
 require 'haml'
-require 'test_runner.rb'
 require 'sinatra'
 require 'rss/parser'
 require 'rufus/scheduler'
+
+require './test_runner.rb'
 
 class MyApp < Sinatra::Base
 
