@@ -28,6 +28,9 @@ class TestRunner
     end
 
     def run_tests
+
+        # reset the output array
+        @results = Array.new
     
         # for each file do 
         Dir.new(@test_location).entries.each { |file|
