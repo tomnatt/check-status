@@ -38,7 +38,7 @@ class MyApp < Sinatra::Base
         rss = RSS::Parser.parse(rss_content, false)
 
         title = "Is it up?"
-        date = "Last updated: " + Time.parse(rss.items[0].date.to_s).strftime("%H:%M:%S %d/%m/%Y")
+        date = "Last updated: " + Time.parse(rss.channel.lastBuildDate.to_s).strftime("%H:%M:%S %d/%m/%Y")
         haml :index, :format => :html5, :locals => {:title => title, :date => date, :rss => rss}
     end
 

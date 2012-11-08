@@ -17,13 +17,18 @@ class TestRunner
             end
         }
 
-        # check for output directory
-        if (!(File.exists?(File.dirname(output_file)) && File.directory?(File.dirname(output_file)))) then
-            raise("you need an output directory")
-        end
-
         # somewhere to put the output
         @results = Array.new
+
+        # check for output directory - create if doesn't exist
+        if (!(File.exists?(File.dirname(@output_file)) && File.directory?(File.dirname(@output_file)))) then
+            Dir.mkdir(File.dirname(@output_file))
+        end
+
+        # check for output file - create if doesn't exist
+        if (!(File.exists?(@output_file))) then
+            create_output()
+        end
         
     end
 
@@ -68,6 +73,7 @@ class TestRunner
             m.channel.title = "Web Services Services. On the Web."
             m.channel.link = "http://www.bath.ac.uk/"
             m.channel.description = "Status of the services run by Web Services"
+            m.channel.lastBuildDate = Time.now
             m.items.do_sort = true # sort items by date
             
             # for each result, add an entry in the output feed
