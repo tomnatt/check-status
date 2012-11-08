@@ -2,6 +2,6 @@
 --- 
 type: mysql
 name: URL Alias database
-hostname: mysql5host.bath.ac.uk
-username: urlalias
+hostname: example.bath.ac.uk
+username: username
 password: 
