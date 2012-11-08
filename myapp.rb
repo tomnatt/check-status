@@ -19,7 +19,7 @@ class MyApp < Sinatra::Base
     get '/run' do
         tests.run_tests
         tests.create_output
-        "done"
+        redirect '/'
     end
 
     get '/output' do
