@@ -2,6 +2,8 @@
     text-align: center;
 }
 
-.date {
+.info {
     font-size: small;
+    margin-bottom: 0;
+    text-align: right;
 }
