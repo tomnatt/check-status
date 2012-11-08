@@ -9,7 +9,9 @@
                 %tr{:class => index.even? ? 'alt' : nil}
                     %td= item.title
                     %td
-                        - if item.description == 'true'
+                        - if item.description == 'website:up'
                             %div{:class => 'notice success'}= "Alive"
+                        - elsif item.description == 'website:redirecting'
+                            %div{:class => 'notice warning'}= "Redirecting"
                         - else
                             %div{:class => 'notice error'}= "Not so alive"
