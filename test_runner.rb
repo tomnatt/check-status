@@ -62,6 +62,9 @@ class TestRunner
             # end the for each
         }
 
+        # sort the output by first element
+        @results.sort_by!{|k|k[0]}.reverse!
+
     end
 
     def create_output
