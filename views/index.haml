@@ -7,7 +7,8 @@
         %tbody
             - rss.items.to_enum.with_index.each do |item, index|
                 %tr{:class => index.even? ? 'alt' : nil}
-                    %td= item.title
+                    %td
+                        %a{:href => item.link}= item.title
                     %td
                         - if item.description == 'website:up'
                             %div{:class => 'notice success'}= "Alive"
