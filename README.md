@@ -14,6 +14,10 @@ gem install bundle
 bundle install
 ```
 
+It uses the Twitter gem, so go set that up:  
+http://rdoc.info/gems/twitter  
+https://devcenter.heroku.com/articles/config-vars#setting-up-config-vars-for-a-deployed-application
+
 Go!  
 ```sh
 rackup
