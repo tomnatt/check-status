@@ -1,5 +1,6 @@
 require 'rss/maker'
 require 'yaml'
+require 'twitter'
 
 class TestRunner
 
@@ -94,6 +95,17 @@ class TestRunner
             f.write(content)
         end
         
+    end
+
+    def send_alerts
+
+        # if a test failed, send an alert to Twitter
+        @results.each { |result|
+            if result[2] == "website:down" then
+                Twitter.update("Website DOWN: #{result[0]} (#{result[1]}) is unavailable")
+            end
+        }
+
     end
 
     private

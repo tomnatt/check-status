@@ -52,6 +52,7 @@ class MyApp < Sinatra::Base
     scheduler.every '10m' do
         tests.run_tests
         tests.create_output
+        tests.send_alerts
     end
 
 end
