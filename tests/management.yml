@@ -1,0 +1,5 @@
+# test for the management site
+--- 
+type: website
+name: Management site
+url: http://www.bath.ac.uk/management/

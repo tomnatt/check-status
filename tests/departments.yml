@@ -1,0 +1,5 @@
+# test for the departments site
+--- 
+type: website
+name: Departments site
+url: http://www.bath.ac.uk/departments/

@@ -1,0 +1,5 @@
+# test for the about site
+--- 
+type: website
+name: About site
+url: http://www.bath.ac.uk/about/

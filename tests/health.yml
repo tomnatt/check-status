@@ -1,0 +1,5 @@
+# test for the health site
+--- 
+type: website
+name: Health site
+url: http://www.bath.ac.uk/health/
