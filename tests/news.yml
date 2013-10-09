@@ -1,0 +1,5 @@
+# test for the news site
+--- 
+type: website
+name: News system
+url: http://www.bath.ac.uk/news/system/wp-admin
