@@ -3,16 +3,14 @@
     %p.info.col_3= date
     %p.info.col_3
         %a{:href => "/run"}= "Re-run tests"
-    %table.striped
-        %tbody
-            - rss.items.to_enum.with_index.each do |item, index|
-                %tr{:class => index.even? ? 'alt' : nil}
-                    %td
-                        %a{:href => item.link}= item.title
-                    %td
-                        - if item.description == 'website:up'
-                            %div{:class => 'notice success'}= "Alive"
-                        - elsif item.description == 'website:redirecting'
-                            %div{:class => 'notice warning'}= "Redirecting"
-                        - else
-                            %div{:class => 'notice error'}= "Not so alive"
+
+%div.col_12
+    - rss.items.to_enum.with_index.each do |item, index|
+        %div{:class => 'col_3'}
+            %a{:href => item.link}
+                - if item.description == 'website:up'
+                    %span{:class => 'notice success'}= item.title
+                - elsif item.description == 'website:redirecting'
+                    %span{:class => 'notice warning'}= item.title
+                - else
+                    %span{:class => 'notice error'}= item.title
