@@ -74,9 +74,9 @@ class TestRunner
         version = "2.0" # ["0.9", "1.0", "2.0"]
 
         content = RSS::Maker.make(version) do |m|
-            m.channel.title = "Web Services Services. On the Web."
+            m.channel.title = "Run, DMC, run!"
             m.channel.link = "http://www.bath.ac.uk/"
-            m.channel.description = "Status of the services run by Web Services"
+            m.channel.description = "Status of the services run by Digital Marketing and Communications"
             m.channel.lastBuildDate = Time.now
             m.items.do_sort = true # sort items by date
             
@@ -110,16 +110,8 @@ class TestRunner
 
     private
     
-        #  there must be a better way of doing this...
         def read_yaml_file(filename)
-            # read the yaml into a string
-            data = ''
-            f = File.open(filename, "r") 
-            f.each_line do |line|
-                data += line
-            end
-            # parse the yaml-string
-            test = YAML::load(data)
+            test = YAML::load_file(filename)
             return test
         end
 
