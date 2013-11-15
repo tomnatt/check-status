@@ -1,12 +1,6 @@
 %div.col_12
-    %h1.col_9= "Status"
-    %p.info.col_3= date
-    %p.info.col_3
-        %a{:href => "/run"}= "Re-run tests"
-
-%div.col_12
     - rss.items.to_enum.with_index.each do |item, index|
-        %div{:class => 'col_3'}
+        %div{:class => 'col_2'}
             %a{:href => item.link}
                 - if item.description == 'website:up'
                     %span{:class => 'notice success'}= item.title
@@ -14,3 +8,9 @@
                     %span{:class => 'notice warning'}= item.title
                 - else
                     %span{:class => 'notice error'}= item.title
+
+%div.col_12
+    %p.info.col_3
+        %a{:href => "/run"}= "Re-run tests"
+    %h2.info.col_3 http://go.bath.ac.uk/web-status    
+    %p.info.col_3= date

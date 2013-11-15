@@ -41,7 +41,7 @@ class TestRunner
         # for each file do 
         Dir.new(@test_location).entries.each { |file|
             
-            # only read files ending in .txt
+            # only read files ending in .yml
             if file =~ /.+\.yml$/ then 
 
                 # eugh...
