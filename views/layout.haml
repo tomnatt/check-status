@@ -5,12 +5,9 @@
         %meta{:charset => 'UTF-8'}
         %meta{:name => 'description', :content => 'text/html'}
         %script{:type => 'text/javascript', :src => 'https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'}
+        %script{:type => 'text/javascript', :src => 'js/kickstart.js'}
         %link{:href => '/css/kickstart.css', :rel => 'stylesheet', :type => 'text/css'}
-        %link{:href => '/css/kickstart-grid.css', :rel => 'stylesheet', :type => 'text/css'}
-        %link{:href => '/css/kickstart-forms.css', :rel => 'stylesheet', :type => 'text/css'}
-        %link{:href => '/css/style.css', :rel => 'stylesheet', :type => 'text/css'}
         %link{:href => '/css/status.css', :rel => 'stylesheet', :type => 'text/css'}
-    %body.elements
-        %div{:id => 'wrap', :class => 'clearfix'}
-            =yield
+    %body
+        =yield
 
