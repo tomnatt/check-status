@@ -1,9 +1,14 @@
 .notice {
     text-align: center;
+    display: block;
 }
 
 .info {
     font-size: small;
     margin-bottom: 0;
     text-align: right;
+}
+
+.col_2 a {
+	text-decoration: none;
 }
