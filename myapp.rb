@@ -43,7 +43,7 @@ class MyApp < Sinatra::Base
     end
 
     get '/test' do
-        puts "test3"
+        "test3"
     end
 
     # set up scheduling - refactor to a different file?
