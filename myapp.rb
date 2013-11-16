@@ -6,7 +6,7 @@ require 'sinatra'
 require 'rss/parser'
 require 'rufus/scheduler'
 
-require './test_runner.rb'
+require_relative 'test_runner.rb'
 
 class MyApp < Sinatra::Base
 
