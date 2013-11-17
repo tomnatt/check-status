@@ -1,16 +1,24 @@
 %div.col_12
     - rss.items.to_enum.with_index.each do |item, index|
-        %div{:class => 'col_2'}
-            %a{:href => item.link}
-                - if item.description == 'website:up'
-                    %span{:class => 'notice success'}= item.title
-                - elsif item.description == 'website:redirecting'
-                    %span{:class => 'notice warning'}= item.title
-                - else
-                    %span{:class => 'notice error'}= item.title
+        - if item.description == 'website:up'
+            %p{:class => 'col_2 notice success center'}
+                %i{:class => 'icon-ok icon-large'}
+                %a{:href => item.link}                
+                    =item.title
+        - elsif item.description == 'website:redirecting'
+            %p{:class => 'col_2 notice warning center'}
+                %i{:class => 'icon-exclamation-sign icon-large'}
+                %a{:href => item.link}                
+                    =item.title        
+        - else
+            %p{:class => 'col_2 notice error center'}
+                %i{:class => 'icon-minus-sign icon-large'}
+                %a{:href => item.link}                
+                    =item.title        
+
 
 %div.col_12
     %p.info.col_3
-        %a{:href => "/run"}= "Re-run tests"
-    %h2.info.col_3 http://go.bath.ac.uk/web-status    
+        %a{:href => "/run"}= "Run tests now"
+    %p.info.col_6.center http://go.bath.ac.uk/web-status    
     %p.info.col_3= date

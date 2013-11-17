@@ -6,7 +6,7 @@ require 'sinatra'
 require 'rss/parser'
 require 'rufus/scheduler'
 
-require './test_runner.rb'
+require_relative 'test_runner.rb'
 
 class MyApp < Sinatra::Base
 
@@ -43,7 +43,7 @@ class MyApp < Sinatra::Base
     end
 
     get '/test' do
-        puts "test3"
+        "test3"
     end
 
     # set up scheduling - refactor to a different file?
@@ -56,3 +56,4 @@ class MyApp < Sinatra::Base
     end
 
 end
+ 
